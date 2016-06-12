@@ -48,7 +48,7 @@ SELECT POSITION_CODE, DEPARTMENT_CODE FROM POSITION_DEPARTMENT
 select position_code from POSITION_LOOKUP
 
 select distinct employee_code FROM GOSALESHR.EMPLOYEE;
-/***
+/*** 16 columns
 
 MTG_ID,
 MTG_TITLE, 
