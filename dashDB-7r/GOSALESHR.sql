@@ -4,7 +4,7 @@ a12.RECORD_END_DATE, POSITION_CODE, POSITION_START_DATE, MANAGER_CODE, BRANCH_CO
 FROM GOSALESHR.EMPLOYEE a11
 join GOSALESHR.EMPLOYEE_HISTORY a12 on (a12.EMPLOYEE_CODE=a11.EMPLOYEE_CODE)
 order by 
-;
+;  /* (position start date = hire date) != record start date */ -- this is due to direct subordination changes
 
 --current employees who originate costly meetings, by demographic and organizational attributes
 select a13.EMPLOYEE_CODE, MTG_DTE, MTG_NM_CAT, MTG_LOC, 
@@ -20,7 +20,7 @@ a12.RECORD_END_DATE, POSITION_CODE, POSITION_START_DATE, MANAGER_CODE, BRANCH_CO
 FROM GOSALESHR.EMPLOYEE a11
 join GOSALESHR.EMPLOYEE_HISTORY a12 on (a12.EMPLOYEE_CODE=a11.EMPLOYEE_CODE) ) a14 on (a14.EMPLOYEE_CODE=a13.EMPLOYEE_CODE)
 
-where EE_MTG_ORGNZR_FLG in ('Y') --and RECORD_END_DATE is NULL
+where EE_MTG_ORGNZR_FLG in ('Y') and RECORD_END_DATE is NULL
 and 
 
 
@@ -44,4 +44,4 @@ GENDER_LOOKUP
 
 SELECT POSITION_CODE, DEPARTMENT_CODE FROM POSITION_DEPARTMENT
 
-select position_code from POSITION LOOKUP
+select position_code from POSITION_LOOKUP
