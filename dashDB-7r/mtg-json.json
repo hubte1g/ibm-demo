@@ -1,0 +1,41 @@
+[
+  '{{repeat(5, 7)}}',
+  {
+    _id: '{{objectId()}}',
+    index: '{{index()}}',
+    guid: '{{guid()}}',
+    mtg_id: '{{integer(1110055,2110055)}}',
+    mtg_title: '{{random("Sales Task Force", "Position Adjustments", "Infrastructure Design Meeting", "Project Planning", "Project Design Meeting", "Enterprise Architecture", "Cloud INfra meeting", "Daves going away party", " Scott - OUt of office", "IT Connect", "Finance ReCap", "Cloud Services - AWS", "Analytics Touchbase", "Scala standup", "Development tiers")}}',
+    mtg_title_cat: '{{random("IT", "Finance", "Project Planning", "DevOps", "Sales", "Vendor", "Marketing", "Product Dev", "Infrastructure")}}',
+    timestamp_mtg: '{{date(new Date(2014, 0, 1), new Date(), "YYYY-MM-ddThh:mm:ss Z")}}',
+    mtg_dte: '{{date(new Date(2014, 0, 1), new Date(), "YYYY-MM-dd")}}',
+    employee_code: '{{integer(10004,10803)}}',
+    mtg_loc: '{{integer(10,125)}}',
+    ee_mtg_orgnzr_flg: '{{random("Y","N")}}',
+    mtg_desc: '{{lorem(1, "paragraphs")}}',
+    mtg_attchmt_flg: '{{random("Y","N")}}',
+    mtg_attchmt_ttl_sz: '{{floating(1000, 4000, 2, "00.00")}}',
+    mtg_tag: '{{random("IT", "Finance", "Project Planning", "DevOps", "Sales", "Vendor", "Marketing", "Product Dev", "Infrastructure")}}',
+    mtg_dur: '{{random("30","15", "45", "60", "120")}}',
+    tm_of_dy_ind: '{{random("Morning", "Afternoon")}}',
+    mtg_invtd_ct: '{{integer(2,16)}}',
+    mtg_accptd_ct: '{{integer(2,16)}}',
+    mtg_dclnd_ct: '{{integer(2,16)}}',
+    
+    about: '{{lorem(1, "paragraphs")}}',
+    registered: '{{date(new Date(2014, 0, 1), new Date(), "YYYY-MM-ddThh:mm:ss Z")}}',
+    latitude: '{{floating(-90.000001, 90)}}',
+    longitude: '{{floating(-180.000001, 180)}}',
+    tags: [
+      '{{repeat(7)}}',
+      '{{lorem(1, "words")}}'
+    ],
+    invitees: [
+      '{{repeat(3)}}',
+      {
+        id: '{{index()}}',
+        name: '{{firstName()}} {{surname()}}'
+      }
+    ]
+  }
+]
