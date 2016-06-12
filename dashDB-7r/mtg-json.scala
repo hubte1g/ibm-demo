@@ -39,7 +39,7 @@ ee_out_rdd.saveAsTextFile("C:/Users/Kizmet/Downloads/ibm-demo/data/out/")
 %unix
 cat part-00000 part-00001 part-00002 part-00003 > merged.txt
 //sed 's/.//;s/.$//' 'C:/Users/Kizmet/Downloads/ibm-demo/data/out/part-00000' 
-sed 's/.//;s/.$//' 'C:/Users/Kizmet/Downloads/ibm-demo/data/out/merged.txt' 
+sed 's/.//;s/.$//' 'C:/Users/Kizmet/Downloads/ibm-demo/data/out/merged.txt' > MTG_DTE_EMPLOYEE_LOC.txt
 
 /***not working
 import java.io._
