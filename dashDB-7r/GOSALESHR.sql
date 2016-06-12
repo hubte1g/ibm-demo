@@ -3,7 +3,7 @@ a12.EMPLOYEE_HISTORY_CODE, EMPLOYEE_HISTORY_PARENT, RECORD_START_DATE,
 a12.RECORD_END_DATE, POSITION_CODE, POSITION_START_DATE, MANAGER_CODE, BRANCH_CODE, ORGANIZATION_CODE
 FROM GOSALESHR.EMPLOYEE a11
 join GOSALESHR.EMPLOYEE_HISTORY a12 on (a12.EMPLOYEE_CODE=a11.EMPLOYEE_CODE)
-order by 
+order by RECORD_START_DATE
 ;  /* (position start date = hire date) != record start date */ -- this is due to direct subordination changes 
 
 /*current employees who originate costly meetings, by date, demographic and organizational attributes -- fine grain for rollup
